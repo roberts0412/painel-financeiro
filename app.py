@@ -106,11 +106,11 @@ with aba1:
     r = c.resumo(df)
     var = c.variacao_despesas_ultimo_mes(df)
     k = st.columns(5)
-    k[0].metric("Receitas", brl(r["receitas"]))
-    k[1].metric("Despesas", brl(r["despesas"]),
+    k[0].metric("Receitas", brl(r["receitas"], 0))
+    k[1].metric("Despesas", brl(r["despesas"], 0),
                 delta=None if var is None else f"{pct(var)} no último mês", delta_color="inverse")
-    k[2].metric("Investido", brl(r["investido"]))
-    k[3].metric("Sobra em conta", brl(r["saldo"]))
+    k[2].metric("Investido", brl(r["investido"], 0))
+    k[3].metric("Sobra em conta", brl(r["saldo"], 0))
     k[4].metric("Taxa de poupança", pct(r["taxa_poupanca"]),
                 help="Quanto da receita não virou despesa: (receitas − despesas) ÷ receitas")
 
@@ -209,8 +209,8 @@ with aba3:
     k[0].metric("Inflação no período", pct(inflacao, 2), help="IPCA acumulado")
     k[1].metric("CDI no período", pct(cdi, 2), help="100% do CDI acumulado")
     k[2].metric("Ganho real do CDI", pct(ganho_real, 2), help="Quanto o CDI rendeu acima da inflação")
-    k[3].metric("Gastos em valores de hoje", brl(corrigido),
-                delta=f"+{brl(corrigido - mens['Despesa'].sum())} de inflação", delta_color="off")
+    k[3].metric("Gastos em valores de hoje", brl(corrigido, 0),
+                delta=f"+{brl(corrigido - mens['Despesa'].sum(), 0)} de inflação", delta_color="off")
     st.caption(f"Fonte dos indicadores: {origem_ind} · CDI (SGS 4391), IPCA (433), "
                f"Poupança (196), Dólar (3698)")
 

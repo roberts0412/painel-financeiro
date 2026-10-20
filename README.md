@@ -1,5 +1,7 @@
 # Painel Financeiro 💰
 
+**[Ver o painel funcionando](https://painel-financeiro-robert.streamlit.app)**
+
 Um painel pra acompanhar finanças pessoais: quanto entrou, quanto saiu, onde o dinheiro foi parar e se valeu mais a pena deixar parado ou investir. Fiz em Python com Streamlit e Plotly, e ele puxa os indicadores (CDI, IPCA, poupança e dólar) direto da API pública do Banco Central.
 
 ## O que tem nele
