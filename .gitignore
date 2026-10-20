@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.streamlit/secrets.toml
+# o extrato de exemplo é gerado pelo gerar_dados.py na primeira execução
+dados/transacoes.csv
+# extratos reais ficam fora do git
+meu_extrato*.csv
